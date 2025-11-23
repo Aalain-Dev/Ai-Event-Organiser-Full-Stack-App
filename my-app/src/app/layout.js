@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
 import { ConvexClientProvider } from "@/Components/ConvexClientProvider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata = {
   title: "Create Next App",
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
         className={`bg-linear-to-br from-gray-950 via-zinc-900 to-stone-900 text-white `}
       >
         <main className="relative min-h-screen">
-         <ConvexClientProvider>
+        <ClerkProvider>
+           <ConvexClientProvider>
            <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -25,6 +27,7 @@ export default function RootLayout({ children }) {
             {children}
           </ThemeProvider>
          </ConvexClientProvider>
+        </ClerkProvider>
         </main>
       </body>
     </html>
