@@ -4,10 +4,16 @@ Welcome to the app
 - layout.js is wrapped with ConvexClientProvider whihc is a backend service 
 - layout.js is wrapped with ClerkProvider which is a authentication service
 - what ever you create inside the app folder will be a route for example created a folder called dashboard now in that created a page.js file which will be the route for the dashboard nwo in url if we search /dashboard it will show the page.js file
-added the convex part half done need more to be fixed 
+
+- Used Authenticated and unauthenticated Routes using convex 
+
+- used use client 
+
+
 
 Grouping the url ?
 - if user want to grp the url like signin and signup we can use a folder called (auth) and inside that folder we can create signin and signup pages and the url will be /auth/signin and /auth/signup
+
 
 
 - what is Optional Catch-All?

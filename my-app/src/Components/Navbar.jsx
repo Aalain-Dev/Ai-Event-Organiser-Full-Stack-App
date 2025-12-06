@@ -1,6 +1,8 @@
 "use client";
 
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton, UserButton } from "@clerk/nextjs";
+import { Authenticated, Unauthenticated } from "convex/react";
+import { User } from "lucide-react";
 
 import React from "react";
 
@@ -20,9 +22,15 @@ const Navbar = () => {
 
         {/* Right Side Buttons */}
         <div className="flex items-center gap-4">
-          <SignInButton mode="modal">
-            <button className="btn bg-white text-black px-5 py-2 rounded-2xl hover:bg-black hover:text-white cursor-pointer ">Sign In</button>
-          </SignInButton>
+          <Authenticated>
+            <UserButton />
+
+          </Authenticated>
+          <Unauthenticated>
+            <SignInButton mode="modal">
+              <button className="btn bg-white text-black px-5 py-2 rounded-2xl hover:bg-black hover:text-white cursor-pointer ">Sign In</button>
+            </SignInButton>
+          </Unauthenticated>
         </div>
       </div>
     </nav>
